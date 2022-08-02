@@ -21,7 +21,7 @@ app.get('/login',(req,res)=>{
      .services(process.env.SERVICE_SID)
      .verifications
      .create({
-        to:phone_number,
+        to:`+${phone_number}`,
         channel:channel
      })
      .then((data)=>{
@@ -36,7 +36,7 @@ app.get('/verify',(req,res)=>{
     .services(process.env.SERVICE_SID)
     .verificationChecks
     .create({
-        to:phone_number,
+        to:`+${phone_number}`,
         code:code
     })
     .then((data)=>{
