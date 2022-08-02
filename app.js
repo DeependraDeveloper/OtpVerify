@@ -25,7 +25,7 @@ app.get('/login',(req,res)=>{
         channel:channel
      })
      .then((data)=>{
-        res.status(200).json({data})
+        res.status(200).json({msg:`otp is send to ${data.to}`} )
      })
 })
 
@@ -40,7 +40,7 @@ app.get('/verify',(req,res)=>{
         code:code
     })
     .then((data)=>{
-        res.status(200).json({data})
+        res.status(200).json({msg:`otp is ${data.status}`})
     })
 })
 
